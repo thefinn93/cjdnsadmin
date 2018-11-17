@@ -45,19 +45,19 @@ Then, connect to the running cjdns instance. There are two ways to do this. The 
 
 .. code:: python
 
-    cjdns = cjdns.connectWithAdminInfo()
+    connection = cjdns.connectWithAdminInfo()
 
 Or, if you have the IP, port and password and wish to ignore the ``~/.cjdnsadmin`` file for whatever reason:
 
 .. code:: python
 
-    cjdns = cjdns.connect(ip, port, password)
+    connection = cjdns.connect(ip, port, password)
 
 Once connected, you may call any of the `cjdns admin interface functions <https://github.com/cjdelisle/cjdns/blob/master/admin/README.md#cjdns-functions>`_:
 
 .. code:: python
 
-    peerStats = cjdns.InterfaceController_peerStats()
+    peerStats = connection.InterfaceController_peerStats()
 
 Finally, there is a helper function that allows one to convert a cjdns public key into an IP address:
 
